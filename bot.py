@@ -3,6 +3,8 @@ import logging
 from telegram import Update, ForceReply, InlineKeyboardMarkup, InlineKeyboardButton, ParseMode
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext, CallbackQueryHandler
 
+from utils.env import BOT_TOKEN
+
 logger = logging.getLogger(__name__)
 
 # Store bot screaming status
@@ -106,7 +108,7 @@ def button_tap(update: Update, context: CallbackContext) -> None:
 
 
 def main() -> None:
-    updater = Updater("<YOUR_BOT_TOKEN_HERE>")
+    updater = Updater(BOT_TOKEN)
 
     # Get the dispatcher to register handlers
     # Then, we register each handler and the conditions the update must meet to trigger it
